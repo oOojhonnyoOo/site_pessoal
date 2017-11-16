@@ -1,7 +1,5 @@
 <?php 
 
-require 'vendor/autoload.php';
-
 $return = new stdClass();
 $emailInformata = "joao.neto@informata.com.br";
 
@@ -164,18 +162,6 @@ if($_GET['sendMail'] == "SendMailInCompleteForInformata"){
     ";
 
 }
-
-
-// $from = new SendGrid\Email("Informata", $to);
-// $to   = new SendGrid\Email($name, $to);
-// $content = new SendGrid\Content("text/html", $message);
-
-// $mail = new SendGrid\Mail($from, $subject, $to, $content);
-// $sg   = new \SendGrid("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");
-// $response = $sg->client->mail()->send()->post($mail);
-
-// $return->statusMail = $response->statusCode();
-// $return->bodyMail   = $response->body();
 
 $headers  = 'MIME-Version: 1.0' . "\r\n";
 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
