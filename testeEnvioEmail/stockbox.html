@@ -1,0 +1,305 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css\bootstrap.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.mask.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <link rel="stylesheet" id="font-awesome-css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?ver=4.8.2" type="text/css" media="all">
+
+
+
+<title></title>
+  
+<style type="text/css">
+  body {
+    padding-top:40px;
+    background-image: url('img/background.jpg') ;
+}
+/*.container {background: #fff; padding: 20px;}*/
+.logo {float: left; padding-left: 10px; }
+.logo img {vertical-align: middle;  height: auto;}
+.titulo {color: #fff; font-size: 1.4em; text-align: center; vertical-align: middle; }
+.panel {/*padding:20px;*/}
+.espaco {padding: 20px;}
+
+h3 {text-transform: uppercase; font-size: 1.1em; color: #666;}
+h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
+.stepwizard-step p {
+    margin-top: 10px;
+}
+.stepwizard-row {
+    display: table-row;
+}
+.stepwizard {
+    display: table;
+    width: 50%;
+    position: relative;
+}
+.stepwizard-step button[disabled] {
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+}
+.stepwizard-row:before {
+    top: 14px;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    z-order: 0;
+}
+.stepwizard-step {
+    display: table-cell;
+    text-align: center;
+    position: relative;
+}
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+}
+.rodape { display: block; min-height: 60px; color: #ceddef; text-align: center; padding-top: 15px; margin-top:25px;}
+
+</style>
+</head>
+<body  onbeforeunload="return 'ola mundo';">
+
+<section class="container">
+    <header class="fixed-top clearfix">
+      <div class="col-md-4"><a href="http://localhost/wp"><img src="img/logo_horizontal.png"/></a></div>
+      <div class="col-md-8 titulo">Saiba quanto seu armazém pode economizar com a implantação do STOCKBOX</div>
+    </header>
+    <br clear="all">
+      <section class="panel panel-default">
+        <header class="panel-heading"><h3>Preencha o Formulário</h3></header>
+        <br />
+        <div class="stepwizard col-md-offset-3">
+            <div class="stepwizard-row setup-panel">
+              <div class="stepwizard-step passo-anterior">
+                <a href="#step-1" type="button" class="btn btn-primary btn-circle" alt="passo 1">1</a>
+                <!-- <p>Passo 1</p> -->
+              </div>
+              <div class="stepwizard-step">
+                <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled" alt="passo 2">2</a>
+                <!-- <p>Passo 2</p> -->
+              </div>
+              
+            </div>
+        </div>
+          <div class="form-horizontal espaco">
+          <div class="row setup-content" id="step-1">
+            <div class="">
+              <div class="col-md-12">
+                <h4> Dados pessoais</h4>
+                <div class="form-group">
+                  <label class="control-label col-md-2">Nome:</label>
+                  <div class="col-md-8"><input class="form-control nome" maxlength="100" type="text" required="required" placeholder="Nome"  /></div>
+                </div>
+                <div class="form-group">
+                  <label  for="inputEmail" class="control-label col-md-2 label-email">E-mail:</label>
+                  <div class="col-md-8"><input maxlength="100" type="email"  id="inputEmail" data-error="Por favor insira um email valido" required class="form-control email" placeholder="E-mail válido" /></div>
+                  <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-2">Telefone:</label>
+                  <div class="col-md-8"><input maxlength="100" type="text" required="required" class="form-control tel_mask telefone" placeholder="Telefone"  /></div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-2">Segmento:</label>
+                  <div class="col-md-8">
+                      <select class="form-control select segmento" id="segmento" name="segmento" required="required">
+                          <option value="NoN">Selecione</option>
+                          <option value="Alimentos">Alimentos</option>
+                          <option value="Materiais de construção">Materiais de construção</option>
+                          <option value="Medicamentos">Medicamentos</option>
+                          <option value="Pecas e ferragens">Peças e ferragens</option>
+                          <option value="Outros">Outros</option>
+                      </select>
+                  </div>
+                </div>
+              
+                <div class="col-md-12"> 
+                  <button class="btn btn-primary nextBtn btn-lg pull-right cadastro_previo " type="button" >próximo</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row setup-content" id="step-2">
+            <div class="">
+              <div class="col-md-12">
+                <h4>Dados do Armazém</h4>
+                <div class="form-group">
+                  <label class="control-label col-md-5">Tamanho do CD em m2 (área útil):</label>
+                  <div class="col-md-5"><input maxlength="200" type="text" class="form-control int_mask tam_cd" placeholder="" /></div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-5">Quantos itens/SKU's comercializa?</label>
+                  <div class="col-md-5"><input maxlength="200" type="text" class="form-control int_mask itens_sku" placeholder=""  /></div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-5">Quantos postos de trabalho existe?</label>
+                  <div class="col-md-5"><input maxlength="200" type="text" class="form-control int_mask qtd_postos_trabalho" placeholder="" /></div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-5">Quantas notas de entrada recebe por dia?</label>
+                  <div class="col-md-5"><input maxlength="200" type="text" class="form-control int_mask notas_entrada_dia" placeholder=""  /></div>
+                </div>              
+                <div class="form-group">
+                  <label class="control-label col-md-5">Nº de pedidos separados por dia:</label>
+                  <div class="col-md-5"><input maxlength="200" type="text" class="form-control int_mask n_pedidos_dia" placeholder=""  /></div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-5">Quantos caminhões carregam por dia? (próprio e alugado)</label>
+                  <div class="col-md-5"><input maxlength="200" type="text" class="form-control int_mask qtd_caminhoes_dia" placeholder=""  /></div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-5">Tem picking de fracionado com conferência no final?</label>
+                  <div class="col-md-5">
+                      <select class="form-control select picking" id="segmento" name="segmento">
+                          <option value="NoN">Selecione</option>
+                          <option value="sim">Sim</option>
+                          <option value="nao">Não</option>
+                      </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-5 notas_dia">Quantas notas de devolução no dia?</label>
+                  <div class="col-md-5"><input maxlength="200" type="text" class="form-control int_mask" placeholder=""  /></div>
+                </div>
+
+                <button class="btn btn-primary nextBtn btn-lg pull-right  cadastro_completo">finalizar</button>
+              </div>
+            </div>
+          </div>
+        </div>  
+        </div>
+      </section>
+    <!-- rodape -->
+        <div class="row">
+            <div class="col-sm-12 rodape">Informata - <i class="fa fa-phone" aria-hidden="true"></i> +55 (81) 3202-2222 | <i class="fa fa-envelope" aria-hidden="true"></i> contato@informata.com.br
+            </div>
+        </div>
+        <!-- fim rodape -->
+</section>
+
+
+
+
+<!-- script -->
+<script type="text/javascript">
+
+
+$(document).ready(function () {
+
+  var navListItems = $('div.setup-panel div a'),
+          allWells = $('.setup-content'),
+          allNextBtn = $('.nextBtn');
+
+  allWells.hide();
+
+  navListItems.click(function (e) {
+      e.preventDefault();
+      var $target = $($(this).attr('href')),
+              $item = $(this);
+
+      if (!$item.hasClass('disabled')) {
+          navListItems.removeClass('btn-primary').addClass('btn-default');
+          $item.addClass('btn-primary');
+          allWells.hide();
+          $target.show();
+          $target.find('input:eq(0)').focus();
+      }
+  });
+
+  allNextBtn.click(function(){
+      var curStep = $(this).closest(".setup-content"),
+          curStepBtn = curStep.attr("id"),
+          nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+          curInputs = curStep.find("input[type='text'],input[type='url']"),
+          isValid = true;
+
+      $(".form-group").removeClass("has-error");
+      for(var i=0; i<curInputs.length; i++){
+          if (!curInputs[i].validity.valid){
+              isValid = false;
+              $(curInputs[i]).closest(".form-group").addClass("has-error");
+          }
+      }
+
+      if (isValid)
+          nextStepWizard.removeAttr('disabled').trigger('click');
+  });
+
+  $('div.setup-panel div a.btn-primary').trigger('click');
+
+  $(".cadastro_completo").click(function(){
+    
+    var arrDados = {
+        'email'    : $(".email").val(),
+        'nome'     : $(".nome").val(),
+        'telefone' : $(".telefone").val(),
+        'segmento' : $(".segmento").val(),
+        'tam_cd'   : $(".tam_cd").val(),
+        'itens_sku': $(".itens_sku").val(),
+        'picking'  : $(".picking").val(),
+        'n_pedidos_dia'       : $(".n_pedidos_dia").val(),
+        'notas_entrada_dia'   : $(".notas_entrada_dia").val(),
+        'qtd_caminhoes_dia'   : $(".qtd_caminhoes_dia").val(),
+        'qtd_postos_trabalho' : $(".qtd_postos_trabalho").val(),
+        'notas_dia' : $(".notas_dia").val()
+    };
+
+    $.post("enviarEmail.php?sendMail=SendMailCompleteForClient",arrDados,function(dados){
+
+      $.post("enviarEmail.php?sendMail=SendMailCompleteForInformata",arrDados,function(dados){
+
+        // redirecionar p/ o index e mandar uma mensagem
+        alert('solicitação enviada com sucesso!! entraremos em contato o mais breve possivel');
+
+      });
+
+    });
+
+  });
+
+  // colocando mascaras
+  $(".tel_mask").mask("(00) 00000 - 0000");
+  $(".int_mask").mask('000.000.000.000.000', {reverse: true});
+
+  $("#inputEmail").blur(function(){
+    var regex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    if(regex.test($(this).val())){
+      $(this).css('borderColor','#ccc');
+      $('.label-email').css('color','#333');         
+      validado = true;
+    }else{
+      $(this).css('borderColor','#a94442');
+      $('.label-email').css('color','#a94442');      
+    }
+
+  });
+  validado = false;
+  $(".cadastro_previo").click(function(){
+
+    if(!validado){
+      $('#inputEmail').css('borderColor','#a94442');
+      $('.label-email').css('color','#a94442');      
+      $('.passo-anterior a').click();
+      console.log('passou aki');
+    }
+
+  });
+
+});
+</script>
+
+
+</body>
+</html>
