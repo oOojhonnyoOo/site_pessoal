@@ -178,7 +178,7 @@ if($_GET['sendMail'] == "SendMailInCompleteForInformata"){
 // $return->bodyMail   = $response->body();
 
 $return->to = $to;
-$return->StatusMail = mail($to, $subject, "ola mundo");
+$return->StatusMail = mail($to, $subject, $message);
 
 echo json_encode($return);
 
