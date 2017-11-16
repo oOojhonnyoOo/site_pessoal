@@ -61,16 +61,6 @@ if($_GET['sendMail'] == "SendMailCompleteForClient")
             <p>Atenciosamente,</p>
             <p>Informata</p>
             <p>www.informata.com.br</p>";
-    }
-    else if($_POST['segmento'] == "Outros")
-    {
-        $return->condicao = 5;
-        // MENSAGEM SEGMENTO OUTROS
-        $msgConteudo = "<p>Prezado(a) ".$_POST['nome'].",</p>
-            <p>Agradecemos seu interesse no STOCKBOX e com base no perfil do seu negócio, sentimos a necessidade de uma melhor compreensão sobre sua dinâmica de trabalho e conhecer um pouco mais sobre a sua empresa, por isso nossos consultores entrarão em contato para fazer um atendimento personalizado e voltado para a sua necessidade.</p>
-            <p>Atenciosamente,</p>
-            <p>Informata</p>
-            <p>www.informata.com.br</p>";
     }else{
         $return->condicao = 6;
         // NÃO ESTA NEM ACIMA NEM ABAIXO DA ESPECTATIVA
@@ -93,6 +83,17 @@ if($_GET['sendMail'] == "SendMailCompleteForClient")
             <p>www.informata.com.br</p>
 
         ";  
+    }
+
+    if($_POST['segmento'] == "Outros")
+    {
+        $return->condicao = 5;
+        // MENSAGEM SEGMENTO OUTROS
+        $msgConteudo = "<p>Prezado(a) ".$_POST['nome'].",</p>
+            <p>Agradecemos seu interesse no STOCKBOX e com base no perfil do seu negócio, sentimos a necessidade de uma melhor compreensão sobre sua dinâmica de trabalho e conhecer um pouco mais sobre a sua empresa, por isso nossos consultores entrarão em contato para fazer um atendimento personalizado e voltado para a sua necessidade.</p>
+            <p>Atenciosamente,</p>
+            <p>Informata</p>
+            <p>www.informata.com.br</p>";        
     }
 
 
