@@ -41,7 +41,7 @@ if($_GET['sendMail'] == "SendMailCompleteForClient")
         ";
 
     }
-    if( $tam_cd > 5000 && $itens_sku > 5000 && $postos_trb > 50 )
+    else if( $tam_cd > 5000 && $itens_sku > 5000 && $postos_trb > 50 )
     {
         $return->condicao = 3;
         // MENSAGEM ACIMA DA ESPECTATIVA
@@ -52,7 +52,7 @@ if($_GET['sendMail'] == "SendMailCompleteForClient")
             <p>Informata</p>
             <p>www.informata.com.br</p>";
     }
-    if( $tam_cd < 5000 && $itens_sku < 5000 && $postos_trb < 50 )
+    else if( $tam_cd < 5000 && $itens_sku < 5000 && $postos_trb < 50 )
     {
         $return->condicao = 4;
         // MENSAGEM ABAIXO DA ESPECTATIVA
@@ -62,7 +62,7 @@ if($_GET['sendMail'] == "SendMailCompleteForClient")
             <p>Informata</p>
             <p>www.informata.com.br</p>";
     }
-    if($_POST['segmento'] == "NoN")
+    else if($_POST['segmento'] == "NoN")
     {
         $return->condicao = 5;
         // MENSAGEM SEGMENTO OUTROS
