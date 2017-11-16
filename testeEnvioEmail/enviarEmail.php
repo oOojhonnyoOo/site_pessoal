@@ -15,13 +15,10 @@ if($_GET['sendMail'] == "SendMailCompleteForClient")
 
     $return->variaveis = array($tam_cd, $itens_sku, $postos_trb);
 
-    $return->cond01 = ($tam_cd >= 1000 && $tam_cd <= 5000)  ;
-    $return->cond02 = ($itens_sku >= 1000 && $itens_sku <= 5000);
-    $return->cond03 = ($postos_trb >= 10 && $postos_trb <= 50);
-    $return->condFinal = ($tam_cd >= 1000 && $tam_cd <= 5000) && ($itens_sku >= 1000 && $itens_sku <= 5000) && ($postos_trb >= 10 && $postos_trb <= 50);
-
+    
     if( ($tam_cd >= 1000 && $tam_cd <= 5000) && ($itens_sku >= 1000 && $itens_sku <= 5000) && ($postos_trb >= 10 && $postos_trb <= 50) )
     {
+        $return->condicao = 2;
         // MENSAGEM NA ESPECTATIVA
         $msgConteudo = "
             <p>Prezado(a) ".$_POST['nome'].",</p>
@@ -46,6 +43,7 @@ if($_GET['sendMail'] == "SendMailCompleteForClient")
     }
     if( $tam_cd > 5000 && $itens_sku > 5000 && $postos_trb > 50 )
     {
+        $return->condicao = 3;
         // MENSAGEM ACIMA DA ESPECTATIVA
         $msgConteudo = "<p>Prezado(a) ".$_POST['nome'].",</p>
            <p>Agradecemos seu interesse no STOCKBOX e com base no perfil do seu negócio, sentimos a necessidade de uma melhor compreensão sobre sua dinâmica de trabalho e conhecer um pouco mais sobre a sua empresa.</p>
@@ -56,6 +54,7 @@ if($_GET['sendMail'] == "SendMailCompleteForClient")
     }
     if( $tam_cd < 5000 && $itens_sku < 5000 && $postos_trb < 50 )
     {
+        $return->condicao = 4;
         // MENSAGEM ABAIXO DA ESPECTATIVA
         $msgConteudo = "<p>Prezado(a) ".$_POST['nome'].",
            <p> Agradecemos seu interesse no STOCKBOX e com base no perfil do seu negócio, sentimos a necessidade de uma melhor compreensão sobre sua dinâmica de trabalho e conhecer um pouco mais sobre a sua empresa, por isso nossos consultores entrarão em contato para fazer um atendimento personalizado e voltado para a sua necessidade.</p>
@@ -65,6 +64,7 @@ if($_GET['sendMail'] == "SendMailCompleteForClient")
     }
     if($_POST['segmento'] == "NoN")
     {
+        $return->condicao = 5;
         // MENSAGEM SEGMENTO OUTROS
         $msgConteudo = "<p>Prezado(a) ".$_POST['nome'].",</p>
             <p>Agradecemos seu interesse no STOCKBOX e com base no perfil do seu negócio, sentimos a necessidade de uma melhor compreensão sobre sua dinâmica de trabalho e conhecer um pouco mais sobre a sua empresa, por isso nossos consultores entrarão em contato para fazer um atendimento personalizado e voltado para a sua necessidade.</p>
@@ -72,6 +72,7 @@ if($_GET['sendMail'] == "SendMailCompleteForClient")
             <p>Informata</p>
             <p>www.informata.com.br</p>";
     }else{
+        $return->condicao = 6;
         // NÃO ESTA NEM ACIMA NEM ABAIXO DA ESPECTATIVA
         $msgConteudo = "
             <p>Prezado(a) ".$_POST['nome'].",</p>
