@@ -62,7 +62,7 @@ if($_GET['sendMail'] == "SendMailCompleteForClient")
             <p>Informata</p>
             <p>www.informata.com.br</p>";
     }
-    else if($_POST['segmento'] == "NoN")
+    else if($_POST['segmento'] == "Outros")
     {
         $return->condicao = 5;
         // MENSAGEM SEGMENTO OUTROS
