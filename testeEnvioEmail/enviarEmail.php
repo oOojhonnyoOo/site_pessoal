@@ -3,13 +3,12 @@
 require 'vendor/autoload.php';
 
 $return = new stdClass();
-$emailInformata = "juliana.damasceno@informata.com.br";
-
+$emailInformata = "joao.neto@informata.com.br";
 
 if($_GET['sendMail'] == "SendMailCompleteForClient")
 {
     $name = $_POST['nome']; 
-    $to = $_POST['email'];
+    $to   = $_POST['email'];
     $subject = "Olá ".$_POST['nome']." a informata agradeçe o contato!";
 
     $tam_cd     = (int)(str_replace(".","", $_POST['tam_cd']));
@@ -172,7 +171,7 @@ $to   = new SendGrid\Email($name, $to);
 $content = new SendGrid\Content("text/html", $message);
 
 $mail = new SendGrid\Mail($from, $subject, $to, $content);
-$sg = new \SendGrid("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");
+$sg   = new \SendGrid("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");
 $response = $sg->client->mail()->send()->post($mail);
 
 $return->statusMail = $response->statusCode();

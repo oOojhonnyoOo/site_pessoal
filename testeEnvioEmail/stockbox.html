@@ -10,90 +10,93 @@
 
 
 
-<title>ola mundo</title>
+  <title>teste 1</title>
   
-<style type="text/css">
+  <style type="text/css">
   body {
     padding-top:40px;
     background-image: url('img/background.jpg') ;
-}
-/*.container {background: #fff; padding: 20px;}*/
-.logo {float: left; padding-left: 10px; }
-.logo img {vertical-align: middle;  height: auto;}
-.titulo {color: #fff; font-size: 1.4em; text-align: center; vertical-align: middle; }
+  }
+  /*.container {background: #fff; padding: 20px;}*/
+  .logo {float: left; padding-left: 10px; }
+  .logo img {vertical-align: middle;  height: auto;}
+  .titulo {color: #fff; font-size: 1.4em; text-align: center; vertical-align: middle; }
 .panel {/*padding:20px;*/}
 .espaco {padding: 20px;}
 
 h3 {text-transform: uppercase; font-size: 1.1em; color: #666;}
 h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
 .stepwizard-step p {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 .stepwizard-row {
-    display: table-row;
+  display: table-row;
 }
 .stepwizard {
-    display: table;
-    width: 50%;
-    position: relative;
+  display: table;
+  width: 50%;
+  position: relative;
 }
 .stepwizard-step button[disabled] {
-    opacity: 1 !important;
-    filter: alpha(opacity=100) !important;
+  opacity: 1 !important;
+  filter: alpha(opacity=100) !important;
 }
 .stepwizard-row:before {
-    top: 14px;
-    bottom: 0;
-    position: absolute;
-    content: " ";
-    width: 100%;
-    height: 1px;
-    background-color: #ccc;
-    z-order: 0;
+  top: 14px;
+  bottom: 0;
+  position: absolute;
+  content: " ";
+  width: 100%;
+  height: 1px;
+  background-color: #ccc;
+  z-order: 0;
 }
 .stepwizard-step {
-    display: table-cell;
-    text-align: center;
-    position: relative;
+  display: table-cell;
+  text-align: center;
+  position: relative;
 }
 .btn-circle {
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    padding: 6px 0;
-    font-size: 12px;
-    line-height: 1.428571429;
-    border-radius: 15px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
 }
 .rodape { display: block; min-height: 60px; color: #ceddef; text-align: center; padding-top: 15px; margin-top:25px;}
 
 </style>
+<!-- onbeforeunload="return false;" -->
 </head>
-<body  onbeforeunload="return 'ola mundo';">
+<body>
 
-<section class="container">
+  <section class="container">
     <header class="fixed-top clearfix">
       <div class="col-md-4"><a href="http://localhost/wp"><img src="img/logo_horizontal.png"/></a></div>
       <div class="col-md-8 titulo">Saiba quanto seu armazém pode economizar com a implantação do STOCKBOX</div>
     </header>
     <br clear="all">
-      <section class="panel panel-default">
-        <header class="panel-heading"><h3>Preencha o Formulário</h3></header>
+    <section class="panel panel-default">
+      <header class="panel-heading"><h3>Preencha o Formulário</h3></header>
+
+      <div id="area-form">
         <br />
         <div class="stepwizard col-md-offset-3">
-            <div class="stepwizard-row setup-panel">
-              <div class="stepwizard-step passo-anterior">
-                <a href="#step-1" type="button" class="btn btn-primary btn-circle" alt="passo 1">1</a>
-                <!-- <p>Passo 1</p> -->
-              </div>
-              <div class="stepwizard-step">
-                <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled" alt="passo 2">2</a>
-                <!-- <p>Passo 2</p> -->
-              </div>
-              
+          <div class="stepwizard-row setup-panel">
+            <div class="stepwizard-step passo-anterior">
+              <a href="#step-1" type="button" class="btn btn-primary btn-circle" alt="passo 1">1</a>
+              <!-- <p>Passo 1</p> -->
             </div>
+            <div class="stepwizard-step">
+              <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled" alt="passo 2">2</a>
+              <!-- <p>Passo 2</p> -->
+            </div>
+
+          </div>
         </div>
-          <div class="form-horizontal espaco">
+        <div class="form-horizontal espaco">
           <div class="row setup-content" id="step-1">
             <div class="">
               <div class="col-md-12">
@@ -114,17 +117,17 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
                 <div class="form-group">
                   <label class="control-label col-md-2">Segmento:</label>
                   <div class="col-md-8">
-                      <select class="form-control select segmento" id="segmento" name="segmento" required="required">
-                          <option value="NoN">Selecione</option>
-                          <option value="Alimentos">Alimentos</option>
-                          <option value="Materiais de construção">Materiais de construção</option>
-                          <option value="Medicamentos">Medicamentos</option>
-                          <option value="Pecas e ferragens">Peças e ferragens</option>
-                          <option value="Outros">Outros</option>
-                      </select>
+                    <select class="form-control select segmento" id="segmento" name="segmento" required="required">
+                      <option value="NoN">Selecione</option>
+                      <option value="Alimentos">Alimentos</option>
+                      <option value="Materiais de construção">Materiais de construção</option>
+                      <option value="Medicamentos">Medicamentos</option>
+                      <option value="Pecas e ferragens">Peças e ferragens</option>
+                      <option value="Outros">Outros</option>
+                    </select>
                   </div>
                 </div>
-              
+
                 <div class="col-md-12"> 
                   <button class="btn btn-primary nextBtn btn-lg pull-right cadastro_previo " type="button" >próximo</button>
                 </div>
@@ -162,12 +165,12 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
                 <div class="form-group">
                   <label class="control-label col-md-5">Tem picking de fracionado com conferência no final?</label>
                   <div class="col-md-5">
-                      <select class="form-control select picking" id="segmento" name="segmento">
-                          <option value="NoN">Selecione</option>
-                          <option value="sim">Sim</option>
-                          <option value="nao">Não</option>
-                      </select>
-                    </div>
+                    <select class="form-control select picking" id="segmento" name="segmento">
+                      <option value="NoN">Selecione</option>
+                      <option value="sim">Sim</option>
+                      <option value="nao">Não</option>
+                    </select>
+                  </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label col-md-5 notas_dia">Quantas notas de devolução no dia?</label>
@@ -178,96 +181,108 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
               </div>
             </div>
           </div>
-        </div>  
         </div>
-      </section>
+      </div>  
+
+      <div class="form-horizontal espaco area-agradecimento" style="display:none;">
+        <center>
+          Agradecemos o seu interesse pelo stockbox<br>
+          sua resposta foi enviada pelo seu email.<br><br>
+          <a href="http://www.stockbox.com.br/">
+            <button type="button" class="btn btn-primary">Voltar para o site</button>
+          </a>
+        </center>
+      </div>
+
+
+    </section>
     <!-- rodape -->
-        <div class="row">
-            <div class="col-sm-12 rodape">Informata - <i class="fa fa-phone" aria-hidden="true"></i> +55 (81) 3202-2222 | <i class="fa fa-envelope" aria-hidden="true"></i> contato@informata.com.br
-            </div>
-        </div>
-        <!-- fim rodape -->
-</section>
+    <div class="row">
+      <div class="col-sm-12 rodape">Informata - <i class="fa fa-phone" aria-hidden="true"></i> +55 (81) 3202-2222 | <i class="fa fa-envelope" aria-hidden="true"></i> contato@informata.com.br
+      </div>
+    </div>
+    <!-- fim rodape -->
+  </section>
 
 
 
 
-<!-- script -->
-<script type="text/javascript">
+  <!-- script -->
+  <script type="text/javascript">
 
 
-$(document).ready(function () {
+    $(document).ready(function () {
 
-  var navListItems = $('div.setup-panel div a'),
-          allWells = $('.setup-content'),
-          allNextBtn = $('.nextBtn');
+      var navListItems = $('div.setup-panel div a'),
+      allWells = $('.setup-content'),
+      allNextBtn = $('.nextBtn');
 
-  allWells.hide();
+      allWells.hide();
 
-  navListItems.click(function (e) {
-      e.preventDefault();
-      var $target = $($(this).attr('href')),
-              $item = $(this);
+      navListItems.click(function (e) {
+        e.preventDefault();
+        var $target = $($(this).attr('href')),
+        $item = $(this);
 
-      if (!$item.hasClass('disabled')) {
+        if (!$item.hasClass('disabled')) {
           navListItems.removeClass('btn-primary').addClass('btn-default');
           $item.addClass('btn-primary');
           allWells.hide();
           $target.show();
           $target.find('input:eq(0)').focus();
-      }
-  });
-
-  allNextBtn.click(function(){
-      var curStep = $(this).closest(".setup-content"),
-          curStepBtn = curStep.attr("id"),
-          nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-          curInputs = curStep.find("input[type='text'],input[type='url']"),
-          isValid = true;
-
-      $(".form-group").removeClass("has-error");
-      for(var i=0; i<curInputs.length; i++){
-          if (!curInputs[i].validity.valid){
-              isValid = false;
-              $(curInputs[i]).closest(".form-group").addClass("has-error");
-          }
-      }
-
-      if (isValid)
-          nextStepWizard.removeAttr('disabled').trigger('click');
-  });
-
-  $('div.setup-panel div a.btn-primary').trigger('click');
-
-  $(".cadastro_completo").click(function(){
-    
-    var arrDados = {
-        'email'    : $(".email").val(),
-        'nome'     : $(".nome").val(),
-        'telefone' : $(".telefone").val(),
-        'segmento' : $(".segmento").val(),
-        'tam_cd'   : $(".tam_cd").val(),
-        'itens_sku': $(".itens_sku").val(),
-        'picking'  : $(".picking").val(),
-        'n_pedidos_dia'       : $(".n_pedidos_dia").val(),
-        'notas_entrada_dia'   : $(".notas_entrada_dia").val(),
-        'qtd_caminhoes_dia'   : $(".qtd_caminhoes_dia").val(),
-        'qtd_postos_trabalho' : $(".qtd_postos_trabalho").val(),
-        'notas_dia' : $(".notas_dia").val()
-    };
-
-    $.post("enviarEmail.php?sendMail=SendMailCompleteForClient",arrDados,function(dados){
-
-      $.post("enviarEmail.php?sendMail=SendMailCompleteForInformata",arrDados,function(dados){
-
-        // redirecionar p/ o index e mandar uma mensagem
-        alert('solicitação enviada com sucesso!! entraremos em contato o mais breve possivel');
-
+        }
       });
 
-    });
+      allNextBtn.click(function(){
+        var curStep = $(this).closest(".setup-content"),
+        curStepBtn = curStep.attr("id"),
+        nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+        curInputs = curStep.find("input[type='text'],input[type='url']"),
+        isValid = true;
 
-  });
+        $(".form-group").removeClass("has-error");
+        for(var i=0; i<curInputs.length; i++){
+          if (!curInputs[i].validity.valid){
+            isValid = false;
+            $(curInputs[i]).closest(".form-group").addClass("has-error");
+          }
+        }
+
+        if (isValid)
+          nextStepWizard.removeAttr('disabled').trigger('click');
+      });
+
+      $('div.setup-panel div a.btn-primary').trigger('click');
+
+      $(".cadastro_completo").click(function(){
+
+        var arrDados = {
+          'email'    : $(".email").val(),
+          'nome'     : $(".nome").val(),
+          'telefone' : $(".telefone").val(),
+          'segmento' : $(".segmento").val(),
+          'tam_cd'   : $(".tam_cd").val(),
+          'itens_sku': $(".itens_sku").val(),
+          'picking'  : $(".picking").val(),
+          'n_pedidos_dia'       : $(".n_pedidos_dia").val(),
+          'notas_entrada_dia'   : $(".notas_entrada_dia").val(),
+          'qtd_caminhoes_dia'   : $(".qtd_caminhoes_dia").val(),
+          'qtd_postos_trabalho' : $(".qtd_postos_trabalho").val(),
+          'notas_dia' : $(".notas_dia").val()
+        };
+
+        $.post("enviarEmail.php?sendMail=SendMailCompleteForClient",arrDados,function(dados){
+
+          $.post("enviarEmail.php?sendMail=SendMailCompleteForInformata",arrDados,function(dados){
+
+              $(".area-agradecimento").css("display","block");
+              $("#area-form").css("display","none");
+
+          });
+
+        });
+
+      });
 
   // colocando mascaras
   $(".tel_mask").mask("(00) 00000 - 0000");
