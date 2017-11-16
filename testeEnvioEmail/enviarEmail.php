@@ -166,16 +166,18 @@ if($_GET['sendMail'] == "SendMailInCompleteForInformata"){
 }
 
 
-$from = new SendGrid\Email("Informata", $to);
-$to   = new SendGrid\Email($name, $to);
-$content = new SendGrid\Content("text/html", $message);
+// $from = new SendGrid\Email("Informata", $to);
+// $to   = new SendGrid\Email($name, $to);
+// $content = new SendGrid\Content("text/html", $message);
 
-$mail = new SendGrid\Mail($from, $subject, $to, $content);
-$sg   = new \SendGrid("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");
-$response = $sg->client->mail()->send()->post($mail);
+// $mail = new SendGrid\Mail($from, $subject, $to, $content);
+// $sg   = new \SendGrid("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");
+// $response = $sg->client->mail()->send()->post($mail);
 
-$return->statusMail = $response->statusCode();
-$return->bodyMail   = $response->body();
+// $return->statusMail = $response->statusCode();
+// $return->bodyMail   = $response->body();
+
+$return->StatusMail = mail($to, $subject, "ola mundo");
 
 echo json_encode($return);
 
