@@ -13,7 +13,7 @@ if($_GET['sendMail'] == "SendMailCompleteForClient")
     $itens_sku  = (int)(str_replace(".","", $_POST['itens_sku']));
     $postos_trb = (int)(str_replace(".","", $_POST['qtd_postos_trabalho']));
 
-    $return->variaveis = array($tam_cd, $itens_sku, $postos_trb);
+    $return->variaveis = array($tam_cd, $itens_sku, $postos_trb,$_POST['segmento']);
 
     
     if( ($tam_cd >= 1000 && $tam_cd <= 5000) && ($itens_sku >= 1000 && $itens_sku <= 5000) && ($postos_trb >= 10 && $postos_trb <= 50) )
