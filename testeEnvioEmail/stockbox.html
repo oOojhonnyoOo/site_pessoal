@@ -66,21 +66,8 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
 .rodape { display: block; min-height: 60px; color: #ceddef; text-align: center; padding-top: 15px; margin-top:25px;}
 
 </style>
-
-<script type="text/javascript">
-  
-function teste(){
-  if (confirm("Tem certeza que deseja sair dessa página")) {   
-    window.close();
-  } else {
-    return false
-  }
-}  
-
-</script>
-
 </head>
-<body onbeforeunload="teste();">
+<body>
 
   <section class="container">
     <header class="fixed-top clearfix">
@@ -321,12 +308,24 @@ function teste(){
 
   });
 
-});
 
-    function emailInformata(){
-      alert('ola mundo');
-      return true;
-    }
+  $(window).bind('beforeunload', function(){
+
+    var arrDados = {
+      'email'    : $(".email").val(),
+      'nome'     : $(".nome").val(),
+      'telefone' : $(".telefone").val(),
+      'segmento' : $(".segmento").val(),
+    };
+
+    //$.post("enviarEmail.php?sendMail=SendMailInCompleteForInformata",arrDados,function(dados){
+    //});
+    console.log(arrDados);
+    return true;
+  });
+  
+
+});
 
 </script>
 
