@@ -74,25 +74,26 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
   <section class="container">
     <header class="fixed-top clearfix">
       <div class="col-md-4"><a href="http://localhost/wp"><img src="img/logo_horizontal.png"/></a></div>
-      <div class="col-md-8 titulo">Relação de emails que entraram em contato com a informata</div>
+      <div class="col-md-8 titulo"></div>
     </header>
     <br clear="all">
     <section class="panel panel-default">
-      <header class="panel-heading"><h3>Preencha o Formulário</h3></header>
+      <header class="panel-heading"><h3>Relação de emails que entraram em contato com a informata</h3></header>
 
 
       <div class="form-horizontal espaco area-agradecimento">
         <center>
         	<table class="table">
-        		<th>
-        			<td>Email</td>
-        			<td>Condição</td>
-        			<td>Data</td>
-        		</th>
+        		<thead>
+	        		<tr>
+	        			<th>Email</th>
+	        			<th>Condição</th>
+	        			<th>Data</th>
+	        		</tr>
+        		</thead>
+        		<tbody>
         		<?php 
-
         		$result = mysql_query("SELECT email, condicao, data FROM aluno");
-
 				while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
 				    echo "<tr>
 				    		<td>".$row[0]."</td>
@@ -101,8 +102,8 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
 				    	  </tr>
 				    	 ";  
 				}
-
         		?>
+        		</tbody>
         	</table>
         </center>
       </div>
