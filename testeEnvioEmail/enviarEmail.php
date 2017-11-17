@@ -100,6 +100,7 @@ if($_GET['sendMail'] == "SendMailCompleteForClient")
                '".$to."' , 
                '".$return->condicao."' , 
                '".date('Y-m-d')."' 
+               )
               ";
     $return->query = mysql_query($sql);
 
