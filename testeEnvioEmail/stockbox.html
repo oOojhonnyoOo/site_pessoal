@@ -309,20 +309,20 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
   });
 
 
-  $(window).bind('beforeunload', function(){
+  // $(window).bind('beforeunload', function(){
 
-    var arrDados = {
-      'email'    : $(".email").val(),
-      'nome'     : $(".nome").val(),
-      'telefone' : $(".telefone").val(),
-      'segmento' : $(".segmento").val(),
-    };
+  //   var arrDados = {
+  //     'email'    : $(".email").val(),
+  //     'nome'     : $(".nome").val(),
+  //     'telefone' : $(".telefone").val(),
+  //     'segmento' : $(".segmento").val(),
+  //   };
 
-    //$.post("enviarEmail.php?sendMail=SendMailInCompleteForInformata",arrDados,function(dados){
-    //});
-    console.log(arrDados);
-    return true;
-  });
+  //   //$.post("enviarEmail.php?sendMail=SendMailInCompleteForInformata",arrDados,function(dados){
+  //   //});
+  //   console.log(arrDados);
+  //   return true;
+  // });
   
 
 });
