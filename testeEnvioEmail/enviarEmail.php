@@ -93,10 +93,23 @@ if($_GET['sendMail'] == "SendMailCompleteForClient")
     </html>
     ";
 
+    // SALVANDO DADOS NO BANCO DE DADOS
+    $connBD = mysql_connect('192.168.0.232', 'root', 'root');
+    $return->connBD = mysql_select_db('infomail', $connBD);
+
+    $sql = "CREATE TABLE aluno(
+            'id' int(3) PRIMARY KEY auto_increment not null,
+            'email' varchar(50) not null,
+            'condicao' varchar(10) not null,
+            'data' DATE not null,
+            )";
+
+    $return->query = mysql_query($sql);
+
 }
 
 if($_GET['sendMail'] == "SendMailCompleteForInformata"){
-
+    $name = "informata";
     $to = $emailInformata;
     $subject = "Olá informata um potencial cliente entrou em contato!";
 
@@ -160,21 +173,6 @@ $headers .= 'Cc: joao.neto@informata.com.br' . "\r\n";
 $headers .= 'Bcc: joao.neto@informata.com.br' . "\r\n";
 $return->to = $to;
 $return->StatusMail = mail($to, $subject, $message, $headers);
-
-
-// SALVANDO DADOS NO BANCO DE DADOS
-$connBD = mysql_connect('192.168.0.232', 'root', 'root');
-$return->connBD = mysql_select_db('infomail', $connBD);
-
-$sql = "CREATE TABLE aluno(
-        'id' int(3) PRIMARY KEY auto_increment not null,
-        'email' varchar(50) not null,
-        'condicao' varchar(10) not null,
-        'data' DATE not null,
-        )";
-
-$return->query = mysql_query($sql);
-
 
 echo json_encode($return);
 
