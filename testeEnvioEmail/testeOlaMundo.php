@@ -7,7 +7,7 @@ $sql    = "INSERT INTO aluno(email, condicao, data) VALUES (
            'teste' , 
            '2' , 
            '".date('Y-m-d')."' 
-          ";
+          )";
 
 
 
