@@ -67,8 +67,20 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
 
 </style>
 
+<script type="text/javascript">
+  
+function teste(){
+  if (confirm("Tem certeza que deseja sair dessa página")) {   
+    window.close();
+  } else {
+    return false
+  }
+}  
+
+</script>
+
 </head>
-<body>
+<body onbeforeunload="teste();">
 
   <section class="container">
     <header class="fixed-top clearfix">
@@ -185,7 +197,7 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
       <div class="form-horizontal espaco area-agradecimento" style="display:none;">
         <center>
           Agradecemos o seu interesse pelo stockbox<br>
-          sua resposta foi enviada pelo seu email.<br><br>
+          sua resposta foi enviada para o seu email.<br><br>
           <a href="http://www.stockbox.com.br/">
             <button type="button" class="btn btn-primary">Voltar para o site</button>
           </a>

@@ -1,7 +1,7 @@
 <?php 
 
 $return = new stdClass();
-$emailInformata = "juliana.damasceno@informata.com.br";
+$emailInformata = "joao.neto@informata.com.br";
 
 if($_GET['sendMail'] == "SendMailCompleteForClient")
 {
@@ -14,7 +14,6 @@ if($_GET['sendMail'] == "SendMailCompleteForClient")
     $postos_trb = (int)(str_replace(".","", $_POST['qtd_postos_trabalho']));
 
     $return->variaveis = array($tam_cd, $itens_sku, $postos_trb,$_POST['segmento']);
-
     
     if( ($tam_cd >= 1000 && $tam_cd <= 5000) && ($itens_sku >= 1000 && $itens_sku <= 5000) && ($postos_trb >= 10 && $postos_trb <= 50) )
     {
@@ -64,25 +63,12 @@ if($_GET['sendMail'] == "SendMailCompleteForClient")
     }else{
         $return->condicao = 6;
         // NÃO ESTA NEM ACIMA NEM ABAIXO DA ESPECTATIVA
-        $msgConteudo = "
-            <p>Prezado(a) ".$_POST['nome'].",</p>
-            <p>Agradecemos seu interesse no STOCKBOX e com base na nossa experiência com outros clientes com perfil semelhante ao seu, podemos afirmar que sua empresa terá os seguintes benefícios diretos com a implantação do STOCKBOX:</p>
-            <br>
-            <p>1. Produtividade: Aumento da produtividade entre 15 e 35% com mais produção por pessoa mapeadas em tempo real;</p>
-            <p>2. Velocidade: O tempo de separar, preparar e embarcar os pedidos vai diminuir entre 20 e 30%;</p>
-            <p>3. Segurança: Assertividade de 99,98%, ou seja, erros próximos de zero no estoque e baixo custo com devoluções;</p>
-            <p>4. Ambiente mais confortável e apresentável, retroalimento a produtividade em mais de 5%;</p>
-            <p>5. O retorno do investimento acontece entre 90 e 180 dias.</p>
-            <br>
-            <p>Estamos no mercado desde 1986, com matriz em Recife/PE e unidade em São Paulo/SP e atendemos a nível nacional, caso tenha interesse em conhecer melhor as nossas soluções, podemos marcar uma visita ou um call para mostrarmos como podemos ajudar a melhorar o seu negócio.</p>
-            <br>
-            <p>Você também pode entrar em contato conosco através do telefone +55 (81) 3202-2222 ou pelo email contato@informata.com.br</p>
-            <br>
+        $msgConteudo = "<p>Prezado(a) ".$_POST['nome'].",</p>
+           <p>Agradecemos seu interesse no STOCKBOX e com base no perfil do seu negócio, sentimos a necessidade de uma melhor compreensão sobre sua dinâmica de trabalho e conhecer um pouco mais sobre a sua empresa.</p>
+            <p>Armazéns e centros de distribuição com maiores capacidades requerem uma atenção especial e por isso nossos consultores entrarão em contato para fazer um atendimento personalizado e voltado para a sua necessidade.</p>
             <p>Atenciosamente,</p>
             <p>Informata</p>
-            <p>www.informata.com.br</p>
-
-        ";  
+            <p>www.informata.com.br</p>";
     }
 
     if($_POST['segmento'] == "Outros")
@@ -165,15 +151,30 @@ if($_GET['sendMail'] == "SendMailInCompleteForInformata"){
 
 }
 
+// ENVIANDO EMAIL 
 $headers  = 'MIME-Version: 1.0' . "\r\n";
 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-$headers .= 'To: Informata juliana.damasceno@informata.com.br' . "\r\n";
-$headers .= 'From: Informata <juliana.damasceno@informata.com.br>' . "\r\n";
-$headers .= 'Cc: juliana.damasceno@informata.com.br' . "\r\n";
-$headers .= 'Bcc: juliana.damasceno@informata.com.br' . "\r\n";
-
+$headers .= 'To: Informata joao.neto@informata.com.br' . "\r\n";
+$headers .= 'From: Informata <joao.neto@informata.com.br>' . "\r\n";
+$headers .= 'Cc: joao.neto@informata.com.br' . "\r\n";
+$headers .= 'Bcc: joao.neto@informata.com.br' . "\r\n";
 $return->to = $to;
 $return->StatusMail = mail($to, $subject, $message, $headers);
+
+
+// SALVANDO DADOS NO BANCO DE DADOS
+$connBD = mysql_connect('192.168.0.232', 'root', 'root');
+$return->connBD = mysql_select_db('infomail', $connBD);
+
+$sql = "CREATE TABLE aluno(
+        'id' int(3) PRIMARY KEY auto_increment not null,
+        'email' varchar(50) not null,
+        'condicao' varchar(10) not null,
+        'data' DATE not null,
+        )";
+
+$return->query = mysql_query($sql);
+
 
 echo json_encode($return);
 
