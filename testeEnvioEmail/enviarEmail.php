@@ -4,7 +4,7 @@ include "Conexao.php";
 
 $return = new stdClass();
 
-$emailInformata = "joao.neto@informata.com.br";
+$emailInformata = "juliana.damasceno@informata.com.br";
 
 if($_GET['sendMail'] == "SendMailCompleteForClient")
 {
@@ -166,10 +166,10 @@ if($_GET['sendMail'] == "SendMailInCompleteForInformata"){
 // ENVIANDO EMAIL 
 $headers  = 'MIME-Version: 1.0' . "\r\n";
 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-$headers .= 'To: Informata joao.neto@informata.com.br' . "\r\n";
-$headers .= 'From: Informata <joao.neto@informata.com.br>' . "\r\n";
-$headers .= 'Cc: joao.neto@informata.com.br' . "\r\n";
-$headers .= 'Bcc: joao.neto@informata.com.br' . "\r\n";
+$headers .= 'To: Informata juliana.damasceno@informata.com.br' . "\r\n";
+$headers .= 'From: Informata <juliana.damasceno@informata.com.br>' . "\r\n";
+$headers .= 'Cc: juliana.damasceno@informata.com.br' . "\r\n";
+$headers .= 'Bcc: juliana.damasceno@informata.com.br' . "\r\n";
 $return->to = $to;
 $return->StatusMail = mail($to, $subject, $message, $headers);
 
