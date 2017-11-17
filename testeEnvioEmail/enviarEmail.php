@@ -1,6 +1,9 @@
 <?php 
 
+include "Conexao.php";
+
 $return = new stdClass();
+
 $emailInformata = "joao.neto@informata.com.br";
 
 if($_GET['sendMail'] == "SendMailCompleteForClient")
@@ -94,8 +97,6 @@ if($_GET['sendMail'] == "SendMailCompleteForClient")
     ";
 
     // SALVANDO DADOS NO BANCO DE DADOS
-    $connBD = mysql_connect('mysql762.umbler.com:41890', 'rootinfomail', '12345678abc');
-    $connBD = mysql_select_db('infomail', $connBD);
     $sql    = "INSERT INTO aluno(email, condicao, data) VALUES (
                '".$to."' , 
                '".$return->condicao."' , 
