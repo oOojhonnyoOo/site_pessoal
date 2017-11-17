@@ -8,9 +8,9 @@ $sql    = "INSERT INTO aluno(email, condicao, data) VALUES (
            '2' , 
            '".date('Y-m-d')."' 
           ";
-          
-$return->query = mysql_query($sql);
 
-var_dump($connBD);
+$query = mysql_query($sql);
+
+var_dump($query);
 
 ?>
