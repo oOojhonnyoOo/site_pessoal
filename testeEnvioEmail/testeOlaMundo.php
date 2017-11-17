@@ -3,7 +3,13 @@
 $connBD = mysql_connect('mysql762.umbler.com:41890', 'rootinfomail', '12345678abc');
 $connBD = mysql_select_db('infomail', $connBD);
 
-//$query = mysql_query($sql);
+$sql    = "INSERT INTO aluno(email, condicao, data) VALUES (
+           'teste' , 
+           '2' , 
+           '".date('Y-m-d')."' 
+          ";
+          
+$return->query = mysql_query($sql);
 
 var_dump($connBD);
 
