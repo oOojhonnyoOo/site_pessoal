@@ -97,7 +97,7 @@ if($_GET['sendMail'] == "SendMailCompleteForClient")
     ";
 
     // SALVANDO DADOS NO BANCO DE DADOS
-    $sql    = "INSERT INTO aluno('condicao', 'data', 'nome', 'email', 'telefone', 'segmento', 'tam_cd', 'itens_sku', 'qtd_postos_trabalho', 'notas_entrada_dia', 'n_pedidos_dia', 'qtd_caminhoes_dia', 'picking', 'notas_dia') VALUES (
+    $sql    = "INSERT INTO aluno(condicao, data, nome, email, telefone, segmento, tam_cd, itens_sku, qtd_postos_trabalho, notas_entrada_dia, n_pedidos_dia, qtd_caminhoes_dia, picking, notas_dia) VALUES (
                '".$return->condicao."' , 
                '".date('Y-m-d')."',
                '".$_POST['nome']."' , 
