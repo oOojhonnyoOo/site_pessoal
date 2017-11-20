@@ -4,7 +4,7 @@ include "Conexao.php";
 
 $return = new stdClass();
 
-$emailInformata = "juliana.damasceno@informata.com.br";
+$emailInformata = "joao.neto@informata.com.br";
 
 if($_GET['sendMail'] == "SendMailCompleteForClient")
 {
@@ -97,10 +97,21 @@ if($_GET['sendMail'] == "SendMailCompleteForClient")
     ";
 
     // SALVANDO DADOS NO BANCO DE DADOS
-    $sql    = "INSERT INTO aluno(email, condicao, data) VALUES (
-               '".$to."' , 
+    $sql    = "INSERT INTO aluno('condicao', 'data', 'nome', 'email', 'telefone', 'segmento', 'tam_cd', 'itens_sku', 'qtd_postos_trabalho', 'notas_entrada_dia', 'n_pedidos_dia', 'qtd_caminhoes_dia', 'picking', 'notas_dia') VALUES (
                '".$return->condicao."' , 
-               '".date('Y-m-d')."' 
+               '".date('Y-m-d')."',
+               '".$_POST['nome']."' , 
+               '".$_POST['email']."' , 
+               '".$_POST['telefone']."' , 
+               '".$_POST['segmento']."' , 
+               '".$_POST['tam_cd']."' , 
+               '".$_POST['itens_sku']."' , 
+               '".$_POST['qtd_postos_trabalho']."' , 
+               '".$_POST['notas_entrada_dia']."' , 
+               '".$_POST['n_pedidos_dia']."' , 
+               '".$_POST['qtd_caminhoes_dia']."' , 
+               '".$_POST['picking']."' , 
+               '".$_POST['notas_dia']."' 
                )
               ";
     $return->query = mysql_query($sql);
@@ -166,10 +177,10 @@ if($_GET['sendMail'] == "SendMailInCompleteForInformata"){
 // ENVIANDO EMAIL 
 $headers  = 'MIME-Version: 1.0' . "\r\n";
 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-$headers .= 'To: Informata juliana.damasceno@informata.com.br' . "\r\n";
-$headers .= 'From: Informata <juliana.damasceno@informata.com.br>' . "\r\n";
-$headers .= 'Cc: juliana.damasceno@informata.com.br' . "\r\n";
-$headers .= 'Bcc: juliana.damasceno@informata.com.br' . "\r\n";
+$headers .= 'To: Informata joao.neto@informata.com.br' . "\r\n";
+$headers .= 'From: Informata <joao.neto@informata.com.br>' . "\r\n";
+$headers .= 'Cc: joao.neto@informata.com.br' . "\r\n";
+$headers .= 'Bcc: joao.neto@informata.com.br' . "\r\n";
 $return->to = $to;
 $return->StatusMail = mail($to, $subject, $message, $headers);
 

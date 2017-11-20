@@ -86,22 +86,44 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
         	<table class="table">
         		<thead>
 	        		<tr>
+	        			<th>Nome</th>
 	        			<th>Email</th>
 	        			<th>Condição</th>
-	        			<th>Data</th>
+                <th>data</th>
+                <th>telefone</th>
+                <th>segmento</th>
+                <th>tam_cd</th>
+                <th>itens_sku</th>
+                <th>qtd_postos_trabalho</th>
+                <th>notas_entrada_dia</th>
+                <th>n_pedidos_dia</th>
+                <th>qtd_caminhoes_dia</th>
+                <th>picking</th>
+                <th>notas_dia</th>
 	        		</tr>
         		</thead>
         		<tbody>
         		<?php 
-        		$result = mysql_query("SELECT email, condicao, data FROM aluno");
-				while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
-				    echo "<tr>
-				    		<td>".$row[0]."</td>
-				    		<td>".$row[1]."</td>
-				    		<td>".$row[2]."</td>
-				    	  </tr>
-				    	 ";  
-				}
+        		$result = mysql_query("SELECT 'nome', 'email', 'condicao', 'data', 'telefone', 'segmento', 'tam_cd', 'itens_sku', 'qtd_postos_trabalho', 'notas_entrada_dia', 'n_pedidos_dia', 'qtd_caminhoes_dia', 'picking', 'notas_dia' FROM aluno");
+    				while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
+    				    echo "<tr>
+        				    		<td>".$row[0]."</td>
+        				    		<td>".$row[1]."</td>
+                        <td>".$row[2]."</td>
+                        <td>".$row[3]."</td>
+                        <td>".$row[4]."</td>
+                        <td>".$row[5]."</td>
+                        <td>".$row[6]."</td>
+                        <td>".$row[7]."</td>
+                        <td>".$row[8]."</td>
+                        <td>".$row[9]."</td>
+                        <td>".$row[10]."</td>
+                        <td>".$row[11]."</td>
+                        <td>".$row[12]."</td>
+                        <td>".$row[13]."</td>
+      				    	  </tr>
+      				    	 ";  
+        		}
         		?>
         		</tbody>
         	</table>

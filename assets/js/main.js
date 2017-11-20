@@ -70,7 +70,7 @@
 
 		}else if($(this).hasClass('bd')){
 
-			conteudo += "<li>Afinidade com MYSQL E SQL SERVER ORACLE</li>";
+			conteudo += "<li>Afinidade com MYSQL E ORACLE SQL</li>";
 			conteudo += "<li>CRUD (insert,select, update, delete)</li>";
 			conteudo += "<li>Montando querys e subquerys</li>";
 			conteudo += "<li>Joins</li>";
@@ -96,10 +96,8 @@
 			conteudo += "<li>Criação de listas</li>";
 			conteudo += "<li>Criação de tabelas</li>";
 			conteudo += "<li>Criação de formulário</li>";
-			conteudo += "<li>manipulação utilizando BOOTSTRAP</li>";
+			conteudo += "<li>manipulação utilizando BOOTSTRAP e MDL</li>";
 			conteudo += "<li>icones utilizando FONTAWESOME</li>";
-			conteudo += "<li>Técnicas de SEO e otimização de sites</li>";
-			conteudo += "<li>Criação e manipulação de SVG</li>";
 			
 		}else if($(this).hasClass('server')){
 		
@@ -117,7 +115,7 @@
 			conteudo += "<li>Eventos jquery</li>";
 			conteudo += "<li>Manipulação de dados utilizando JSON</li>";
 			conteudo += "<li>$.POST e $.GET</li>";
-			conteudo += "<li>AngularJS 2.0</li>";
+			conteudo += "<li>AngularJS</li>";
 			conteudo += "<li>Diretivas utilizando angular</li>";
 			conteudo += "<li>Ajax</li>";
 			conteudo += "<li>XMLHttpRequest</li>";
@@ -156,9 +154,9 @@
 
 		if(validado){
 			$.post('enviar-email.php' , {'nome' : $("#demo-name").val(), 'email' : $("#demo-email").val() , 'mensagem' : $("#demo-message").val()}, function(data){
-
+				$(".enviar-email").val("Enviado com sucesso!");
 			});
-			$(".enviar-email").val("Enviado com sucesso!");
+			
 		}
 		else{
 			$(this).prop("disabled", false );
