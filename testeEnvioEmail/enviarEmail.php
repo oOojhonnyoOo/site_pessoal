@@ -114,6 +114,7 @@ if($_GET['sendMail'] == "SendMailCompleteForClient")
                '".$_POST['notas_dia']."' 
                )
               ";
+    $return->sql   = $sql;
     $return->query = mysql_query($sql);
 
 }
