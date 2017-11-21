@@ -8,7 +8,7 @@
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <link rel="stylesheet" id="font-awesome-css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?ver=4.8.2" type="text/css" media="all">
 
-  <title>teste 2</title>
+  <title>Formulário stockbox</title>
   
   <style type="text/css">
   body {
@@ -71,7 +71,7 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
 
   <section class="container">
     <header class="fixed-top clearfix">
-      <div class="col-md-4"><a href="http://localhost/wp"><img src="img/logo_horizontal.png"/></a></div>
+      <div class="col-md-4"><a href="http://www.stockbox.com.br/"><img src="img/logo_horizontal.png"/></a></div>
       <div class="col-md-8 titulo">Saiba quanto seu armazém pode economizar com a implantação do STOCKBOX</div>
     </header>
     <br clear="all">
@@ -286,7 +286,7 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
             });
           }
           validado = false;
-          
+
         }
 
         if(validado)
@@ -296,6 +296,8 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
             $.post("enviarEmail.php?sendMail=SendMailCompleteForInformata",arrDados,function(dados){
                 $(".area-agradecimento").css("display","block");
                 $("#area-form").css("display","none");
+                // ao clica não exibir mensagem de alerta
+                $(window).off('beforeunload', function(){});
             });
           });
         }
@@ -330,21 +332,21 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
   });
 
 
-  // $(window).bind('beforeunload', function(){
+  $(window).on('beforeunload', function(){
 
-  //   var arrDados = {
-  //     'email'    : $(".email").val(),
-  //     'nome'     : $(".nome").val(),
-  //     'telefone' : $(".telefone").val(),
-  //     'segmento' : $(".segmento").val(),
-  //   };
+    var arrDados = {
+      'email'    : $(".email").val(),
+      'nome'     : $(".nome").val(),
+      'telefone' : $(".telefone").val(),
+      'segmento' : $(".segmento").val(),
+    };
 
-  //   //$.post("enviarEmail.php?sendMail=SendMailInCompleteForInformata",arrDados,function(dados){
-  //   //});
-  //   console.log(arrDados);
-  //   return true;
-  // });
+    //$.post("enviarEmail.php?sendMail=SendMailInCompleteForInformata",arrDados,function(dados){
+    //});
+    return "ta lendo esse texto aki";
+  });
   
+
 
 });
 
