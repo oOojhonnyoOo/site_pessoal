@@ -183,8 +183,10 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
 
       <div class="form-horizontal espaco area-agradecimento" style="display:none;">
         <center>
-          Agradecemos o seu interesse pelo stockbox<br>
-          sua resposta foi enviada para o seu email.<br><br>
+          <font id="respostaRetorno">
+            Agradecemos o seu interesse pelo stockbox<br>
+            sua resposta foi enviada para o seu email.<br><br>
+          </font>
           <a href="http://www.stockbox.com.br/">
             <button type="button" class="btn btn-primary">Voltar para o site</button>
           </a>
@@ -253,6 +255,8 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
 
       $(".cadastro_completo").click(function(){
 
+        var validado = true;
+
         var arrDados = {
           'email'    : $(".email").val(),
           'nome'     : $(".nome").val(),
@@ -268,16 +272,33 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
           'notas_dia' : $(".notas_dia").val()
         };
 
-        $.post("enviarEmail.php?sendMail=SendMailCompleteForClient",arrDados,function(dados){
+        if( $(".tam_cd").val() == "" || $(".itens_sku").val() == "" || $(".picking").val() == "NoN" || $(".n_pedidos_dia").val() == "" || $(".notas_entrada_dia").val() == "" || $(".qtd_caminhoes_dia").val() == "" || $(".qtd_postos_trabalho").val() == "" || $(".notas_dia").val() == "")
+        {
 
-          $.post("enviarEmail.php?sendMail=SendMailCompleteForInformata",arrDados,function(dados){
+          var confirmarSaida = confirm("Tem certeza que deseja sair do formulário sem preencher todos os campos?");
+          if(confirmarSaida)
+          {
+            $("#respostaRetorno").html("Agradecemos o seu interesse em nosso produto, mas infelizmente não podemos emitir nenhuma resposta sem o preenchimento completo do formulário.<br>");
+            // grava dados na base
+            $.post("registraDados.php",arrDados,function(dados){
+                $(".area-agradecimento").css("display","block");
+                $("#area-form").css("display","none");
+            });
+          }
+          validado = false;
+          
+        }
 
-              $(".area-agradecimento").css("display","block");
-              $("#area-form").css("display","none");
-
+        if(validado)
+        {
+          console.log('chegou aki');
+          $.post("enviarEmail.php?sendMail=SendMailCompleteForClient",arrDados,function(dados){
+            $.post("enviarEmail.php?sendMail=SendMailCompleteForInformata",arrDados,function(dados){
+                $(".area-agradecimento").css("display","block");
+                $("#area-form").css("display","none");
+            });
           });
-
-        });
+        }
 
       });
 
