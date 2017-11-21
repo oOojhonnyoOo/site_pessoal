@@ -279,19 +279,14 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
           if(confirmarSaida)
           {
             $("#respostaRetorno").html("Agradecemos o seu interesse em nosso produto, mas infelizmente não podemos emitir nenhuma resposta sem o preenchimento completo do formulário.<br>");
-            // grava dados na base
-            $.post("registraDados.php",arrDados,function(dados){
-                $(".area-agradecimento").css("display","block");
-                $("#area-form").css("display","none");
-            });
+            $(".area-agradecimento").css("display","block");
+            $("#area-form").css("display","none");
           }
           validado = false;
-
         }
 
         if(validado)
         {
-          console.log('chegou aki');
           $.post("enviarEmail.php?sendMail=SendMailCompleteForClient",arrDados,function(dados){
             $.post("enviarEmail.php?sendMail=SendMailCompleteForInformata",arrDados,function(dados){
                 $(".area-agradecimento").css("display","block");
@@ -303,6 +298,8 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
           });
         }
 
+        // grava dados na base
+        $.post("registraDados.php",arrDados,function(dados){});
       });
 
   $("a").click(function(){
@@ -347,8 +344,8 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
       'segmento' : $(".segmento").val(),
     };
 
-    //$.post("registraDados.php",arrDados,function(dados){
-    //});
+    $.post("registraDados.php",arrDados,function(dados){
+    });
 
     return "ta lendo esse texto aki";
   });
