@@ -188,7 +188,7 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
             sua resposta foi enviada para o seu email.<br><br>
           </font>
           <a href="http://www.stockbox.com.br/">
-            <button type="button" class="btn btn-primary">Voltar para o site</button>
+            <button type="button" class="btn btn-primary voltar-site">Voltar para o site</button>
           </a>
         </center>
       </div>
@@ -303,7 +303,7 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
 
       });
 
-  $("a").click(function(){
+  $(".voltar-site").click(function(){
     $(window).off('beforeunload', function(){});
     $(window).off('beforeunload');    
   });

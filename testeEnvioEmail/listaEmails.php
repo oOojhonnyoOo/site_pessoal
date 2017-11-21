@@ -9,7 +9,7 @@
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <link rel="stylesheet" id="font-awesome-css" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?ver=4.8.2" type="text/css" media="all">
 
-  <title>teste 2</title>
+  <title>lista emails stockbox</title>
   
   <style type="text/css">
   body {
