@@ -305,6 +305,11 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
 
       });
 
+  $("a").click(function(){
+    $(window).off('beforeunload', function(){});
+    $(window).off('beforeunload');    
+  });
+
   // colocando mascaras
   $(".tel_mask").mask("(00) 00000 - 0000");
   $(".int_mask").mask('000.000.000.000.000', {reverse: true});
