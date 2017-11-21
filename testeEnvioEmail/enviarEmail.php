@@ -1,5 +1,7 @@
 <?php 
 
+include "Conexao.php";
+
 $return = new stdClass();
 
 $emailInformata = "joao.neto@informata.com.br";
@@ -93,6 +95,8 @@ if($_GET['sendMail'] == "SendMailCompleteForClient")
     </body>
     </html>
     ";
+
+    include 'registraDados';
 
 }
 

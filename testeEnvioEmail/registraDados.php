@@ -6,8 +6,10 @@ $sql = "delete from aluno where email = '".$_POST['email']."' order by id desc l
 $return['sqlDelete']   = $sql;
 $return['queryDelete'] = mysql_query($sql);
 
+$cond = isset($return->condicao)? $return->condicao : '1';
+
 $sql    = "INSERT INTO aluno(condicao, data, nome, email, telefone, segmento, tam_cd, itens_sku, qtd_postos_trabalho, notas_entrada_dia, n_pedidos_dia, qtd_caminhoes_dia, picking, notas_dia) VALUES (
-           '1' , 
+           '".$cond."' , 
            '".date('Y-m-d')."',
            '".$_POST['nome']."' , 
            '".$_POST['email']."' , 
