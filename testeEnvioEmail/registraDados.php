@@ -2,7 +2,10 @@
 
 include "Conexao.php";
 
-// SALVANDO DADOS NO BANCO DE DADOS
+//$sql = "delete from aluno where email = '".$_POST['email']."' order by id desc limit 1 ";
+//$return['sqlDelete']   = $sql;
+//$return['queryDelete'] = mysql_query($sql);
+
 $sql    = "INSERT INTO aluno(condicao, data, nome, email, telefone, segmento, tam_cd, itens_sku, qtd_postos_trabalho, notas_entrada_dia, n_pedidos_dia, qtd_caminhoes_dia, picking, notas_dia) VALUES (
            '1' , 
            '".date('Y-m-d')."',
@@ -20,8 +23,8 @@ $sql    = "INSERT INTO aluno(condicao, data, nome, email, telefone, segmento, ta
            '".$_POST['notas_dia']."' 
            )
           ";
-$return['sql']   = $sql;
-$return['query'] = mysql_query($sql);
+$return['sqlInsert']   = $sql;
+$return['queryInsert'] = mysql_query($sql);
 
 var_dump($return);
 

@@ -77,7 +77,7 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
     <br clear="all">
     <section class="panel panel-default">
       <header class="panel-heading"><h3>Preencha o Formulário</h3></header>
-
+      <div id="dialog-confirm" title="Executar função?"></div>
       <div id="area-form">
         <br />
         <div class="stepwizard col-md-offset-3">
@@ -298,6 +298,7 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
                 $("#area-form").css("display","none");
                 // ao clica não exibir mensagem de alerta
                 $(window).off('beforeunload', function(){});
+                $(window).off('beforeunload');
             });
           });
         }
@@ -341,8 +342,9 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
       'segmento' : $(".segmento").val(),
     };
 
-    //$.post("enviarEmail.php?sendMail=SendMailInCompleteForInformata",arrDados,function(dados){
+    //$.post("registraDados.php",arrDados,function(dados){
     //});
+
     return "ta lendo esse texto aki";
   });
   
