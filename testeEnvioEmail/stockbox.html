@@ -284,6 +284,8 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
             $.post("registraDados.php",arrDados,function(dados){});
             $(".area-agradecimento").css("display","block");
             $("#area-form").css("display","none");
+            $(window).off('beforeunload', function(){});
+            $(window).off('beforeunload');                 
           }
           validado = false;
         }
