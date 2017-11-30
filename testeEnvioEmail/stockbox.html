@@ -108,7 +108,7 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
                   <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
-                  <label class="control-label col-md-2">Telefone:</label>
+                  <label class="control-label col-md-2 label-telefone">Telefone:</label>
                   <div class="col-md-8"><input maxlength="100" type="text" required="required" class="form-control tel_mask telefone" placeholder="Telefone"  /></div>
                 </div>
                 <div class="form-group">
@@ -327,7 +327,9 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
     }
 
   });
+
   validado = false;
+
   $(".cadastro_previo").click(function(){
 
     if(!validado || $(".email").val() == ""){
@@ -339,11 +341,27 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
   });
 
   $(".passo2").click(function(){
-    if(!validado || $(".email").val() == ""){
+    if(!validado || $(".email").val() == "" || $(".telefone").val() == ""){
+
+      if($(".email").val() == ""){
+       $('.email').css('borderColor','#a94442');
+       $('.label-email').css('color','#a94442');    
+      }
+
+      if($(".telefone").val() == ""){
+       $('.telefone').css('borderColor','#a94442');
+       $('.label-telefone').css('color','#a94442');           
+      }
+
       $('.passo-anterior a').click();
     }
   });
 
+  $(".passo2").mouseover(function(){
+      if($(".email").val() != "" && $(".telefone").val() != ""){
+        $(".passo2").removeAttr('disabled');
+      }    
+  })
 
   $(window).on('beforeunload', function(){
 
