@@ -7,7 +7,7 @@ include "Conexao.php";
 //$return['queryDelete'] = mysql_query($sql);
 
 $sql    = "INSERT INTO aluno(condicao, data, nome, email, telefone, segmento, tam_cd, itens_sku, qtd_postos_trabalho, notas_entrada_dia, n_pedidos_dia, qtd_caminhoes_dia, picking, notas_dia, validado) VALUES (
-           '-' , 
+           '1' , 
            '".date('Y-m-d')."',
            '".$_POST['nome']."' , 
            '".$_POST['email']."' , 
