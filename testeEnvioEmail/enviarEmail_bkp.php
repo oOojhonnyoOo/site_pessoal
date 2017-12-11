@@ -1,13 +1,6 @@
 <?php 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
 
 include "Conexao.php";
-require 'phpmailer/src/Exception.php';
-require 'phpmailer/src/PHPMailer.php';
-require 'phpmailer/src/SMTP.php';
-
 
 $return = new stdClass();
 
@@ -187,8 +180,6 @@ if($_GET['sendMail'] == "SendMailInCompleteForInformata"){
 }
 
 // ENVIANDO EMAIL 
-
-/*
 $headers  = 'MIME-Version: 1.0' . "\r\n";
 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 $headers .= 'To: Informata joao.neto@informata.com.br' . "\r\n";
@@ -197,46 +188,7 @@ $headers .= 'Cc: joao.neto@informata.com.br' . "\r\n";
 $headers .= 'Bcc: joao.neto@informata.com.br' . "\r\n";
 $return->to = $to;
 $return->StatusMail = mail($to, $subject, $message, $headers);
+
 echo json_encode($return);
-*/
-
-
-
-// COM PHP MAILER
-
-$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
-try {
-    //Server settings
-    $mail->SMTPDebug = 2;                                 // Enable verbose debug output
-    $mail->isSMTP();                                      // Set mailer to use SMTP
-    $mail->Host = 'aspmx.l.google.com';  // Specify main and backup SMTP servers
-    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = $emailInformata;                 // SMTP username
-    $mail->Password = '123asd123asd';                           // SMTP password
-    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-    $mail->Port = 25;                                     // TCP port to connect to
-
-    //Recipients
-    $mail->setFrom($emailInformata, 'Informata');
-    $mail->addAddress($to, $_POST['nome']);     // Add a recipient
-    $mail->addReplyTo($emailInformata, 'Informata');
-    $mail->addCC($emailInformata);
-    $mail->addBCC($emailInformata);
-
-    //Content
-    $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = $subject;
-    $mail->Body    = $message;
-    $mail->send();
-    echo 'Message has been sent';
-} catch (Exception $e) {
-    echo 'Message could not be sent.';
-    echo 'Mailer Error: ' . $mail->ErrorInfo;
-}
-
-
-
-
-
 
 ?>
