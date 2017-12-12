@@ -186,7 +186,7 @@ $headers .= 'To: Informata joao.neto@informata.com.br' . "\r\n";
 $headers .= 'From: Informata <joao.neto@informata.com.br>' . "\r\n";
 $headers .= 'Cc: joao.neto@informata.com.br' . "\r\n";
 $headers .= 'Bcc: joao.neto@informata.com.br' . "\r\n";
-$header  .= "X-Mailer: PHP/" . phpversion ();
+$headers .= "X-Mailer: PHP/".phpversion();
 $return->to = $to;
 $return->StatusMail = mail($to, $subject, $message, $headers);
 
