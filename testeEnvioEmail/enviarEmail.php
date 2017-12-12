@@ -1,6 +1,7 @@
 <?php 
 
 include "Conexao.php";
+require 'PHPMailer-5.2.26/PHPMailerAutoload.php';
 
 $return = new stdClass();
 
@@ -180,16 +181,39 @@ if($_GET['sendMail'] == "SendMailInCompleteForInformata"){
 }
 
 // ENVIANDO EMAIL 
-$headers  = 'MIME-Version: 1.0' . "\r\n";
-$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-$headers .= 'To: Informata joao.neto@informata.com.br' . "\r\n";
-$headers .= 'From: Informata <joao.neto@informata.com.br>' . "\r\n";
-$headers .= 'Cc: joao.neto@informata.com.br' . "\r\n";
-$headers .= 'Bcc: joao.neto@informata.com.br' . "\r\n";
-$headers .= "X-Mailer: PHP/".phpversion();
-$return->to = $to;
-$return->StatusMail = mail($to, $subject, $message, $headers);
+//$headers  = 'MIME-Version: 1.0' . "\r\n";
+//$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+//$headers .= 'To: Informata joao.neto@informata.com.br' . "\r\n";
+//$headers .= 'From: Informata <joao.neto@informata.com.br>' . "\r\n";
+//$headers .= 'Cc: joao.neto@informata.com.br' . "\r\n";
+//$headers .= 'Bcc: joao.neto@informata.com.br' . "\r\n";
+//$headers .= "X-Mailer: PHP/".phpversion();
+//$return->to = $to;
+//$return->StatusMail = mail($to, $subject, $message, $headers);
 
-echo json_encode($return);
+$mail = new PHPMailer;
+$mail->isSMTP();
+$mail->SMTPDebug = 2;
+$mail->Debugoutput = 'html';
+$mail->Host = 'smtp.gmail.com';
+$mail->Port = 587;
+$mail->SMTPSecure = 'tls';
+$mail->SMTPAuth = true;
+$mail->Username = "joao.neto@informata.com.br";
+$mail->Password = "123asd123asd";
+
+$mail->setFrom("joao.neto@informata.com.br", 'Joao Neto');
+$mail->addReplyTo('joao.neto@informata.com.br', 'joao neto');
+$mail->addAddress($to, $name);
+
+$mail->Subject = $subject;
+$mail->msgHTML($message);
+
+if (!$mail->send()) {
+    echo "Mailer Error: " . $mail->ErrorInfo;
+} else {
+    echo "Message sent!";
+
+}
 
 ?>
