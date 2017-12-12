@@ -181,11 +181,12 @@ if($_GET['sendMail'] == "SendMailInCompleteForInformata"){
 
 // ENVIANDO EMAIL 
 $headers  = 'MIME-Version: 1.0' . "\r\n";
-$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
 $headers .= 'To: Informata joao.neto@informata.com.br' . "\r\n";
 $headers .= 'From: Informata <joao.neto@informata.com.br>' . "\r\n";
 $headers .= 'Cc: joao.neto@informata.com.br' . "\r\n";
 $headers .= 'Bcc: joao.neto@informata.com.br' . "\r\n";
+$header  .= "X-Mailer: PHP/" . phpversion ();
 $return->to = $to;
 $return->StatusMail = mail($to, $subject, $message, $headers);
 
