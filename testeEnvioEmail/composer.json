@@ -1,7 +1,0 @@
-{
-    "require": {
-        "league/oauth2-client": "1.4.2",
-        "league/oauth2-google": "1.0.0",
-        "phpmailer/phpmailer": "5.2.26"
-    }
-}
