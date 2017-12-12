@@ -11,7 +11,7 @@ if($_GET['sendMail'] == "SendMailCompleteForClient")
 {
     $name = $_POST['nome']; 
     $to   = $_POST['email'];
-    $subject = "Olá ".$_POST['nome']." a informata agradeçe o contato!";
+    $subject = "Ola ".$_POST['nome']." a informata agradeçe o contato!";
 
     $tam_cd     = (int)(str_replace(".","", $_POST['tam_cd']));
     $itens_sku  = (int)(str_replace(".","", $_POST['itens_sku']));
@@ -89,7 +89,7 @@ if($_GET['sendMail'] == "SendMailCompleteForClient")
 
     $message = "<html>
     <head>
-        <title>Olá ".$_POST['nome']." obrigado pelo contato!</title>
+        <title>Ola ".$_POST['nome']." obrigado pelo contato!</title>
     </head>
     <body>
         ".$msgConteudo."
@@ -127,12 +127,12 @@ if($_GET['sendMail'] == "SendMailCompleteForClient")
 if($_GET['sendMail'] == "SendMailCompleteForInformata"){
     $name = "informata";
     $to = $emailInformata;
-    $subject = "Olá informata um potencial cliente entrou em contato!";
+    $subject = "Ola informata um potencial cliente entrou em contato!";
 
     $message = "
     <html>
     <head>
-        <title>Olá informata um potencial cliente entrou em contato!</title>
+        <title>Ola informata um potencial cliente entrou em contato!</title>
     </head>
     <body>
 
@@ -165,7 +165,7 @@ if($_GET['sendMail'] == "SendMailInCompleteForInformata"){
     $message = "
     <html>
     <head>
-        <title>Olá informata um cliente em potencial abandonou o formulário!</title>
+        <title>Ola informata um cliente em potencial abandonou o formulário!</title>
     </head>
     <body>
 

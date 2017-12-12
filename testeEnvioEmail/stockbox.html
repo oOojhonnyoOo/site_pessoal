@@ -292,6 +292,8 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
 
         if(validado)
         {
+          $(this).html("Enviando...");
+          $(this).prop( "disabled", true );
           $.post("enviarEmail.php?sendMail=SendMailCompleteForClient",arrDados,function(dados){
             $.post("enviarEmail.php?sendMail=SendMailCompleteForInformata",arrDados,function(dados){
                 $(".area-agradecimento").css("display","block");
@@ -299,6 +301,9 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
                 // ao clica não exibir mensagem de alerta
                 $(window).off('beforeunload', function(){});
                 $(window).off('beforeunload');
+                
+                $(this).html("finalizar");
+                $(this).prop( "disabled", false );
             });
           });
         }
