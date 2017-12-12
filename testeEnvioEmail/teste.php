@@ -13,8 +13,8 @@ $mail->SMTPAuth = true;
 $mail->Username = "joao.neto@informata.com.br";
 $mail->Password = "123asd123asd";
 
-$mail->setFrom('eujoaonetoprogramador@gmail.com', 'Joao Neto');
-$mail->addReplyTo('eujoaonetoprogramador@gmail.com', 'joao neto');
+$mail->setFrom('joao.neto@informata.com.br', 'Joao Neto');
+$mail->addReplyTo('joao.neto@informata.com.br', 'joao neto');
 $mail->addAddress('eujoaonetoti@outlook.com', 'teste 123');
 
 $mail->Subject = 'PHPMailer GMail SMTP test';
