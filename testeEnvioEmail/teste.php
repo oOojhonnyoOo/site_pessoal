@@ -15,7 +15,7 @@ $mail->Password = "123asd123asd";
 
 $mail->setFrom('joao.neto@informata.com.br', 'Joao Neto');
 $mail->addReplyTo('joao.neto@informata.com.br', 'joao neto');
-$mail->addAddress('eujoaonetoti@outlook.com', 'teste 123');
+$mail->addAddress($_GET['email'], 'teste 123');
 
 $mail->Subject = 'PHPMailer GMail SMTP test';
 
