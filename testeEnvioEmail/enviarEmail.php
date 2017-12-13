@@ -201,6 +201,7 @@ $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
 $mail->Username = "joao.neto@informata.com.br";
 $mail->Password = "123asd123asd";
+$mail->CharSet  = 'UTF-8';
 
 $mail->setFrom("joao.neto@informata.com.br", 'Joao Neto');
 $mail->addReplyTo('joao.neto@informata.com.br', 'joao neto');
