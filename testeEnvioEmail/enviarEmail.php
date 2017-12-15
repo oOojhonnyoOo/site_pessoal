@@ -33,7 +33,7 @@ if($_GET['sendMail'] == "SendMailCompleteForClient")
             <p>4. Ambiente mais confortável e apresentável, retroalimento a produtividade em mais de 5%;</p>
             <p>5. O retorno do investimento acontece entre 90 e 180 dias.</p>
             <br>
-            <p>Estamos no mercado desde 1986, com matriz em Recife/PE e unidade em São Paulo/SP e atendemos a nível nacional, caso tenha interesse em conhecer melhor as nossas soluções, podemos marcar uma visita ou um call para mostrarmos como podemos ajudar a melhorar o seu negócio.</p>
+            <p>Estamos no mercado desde 1986, com matriz em Recife/PE e unidade em São Paulo/SP e atendemos todo país, caso tenha interesse em conhecer melhor as nossas soluções, podemos marcar uma visita ou um call para mostrarmos como podemos ajudar a melhorar o seu negócio.</p>
             <br>
             <p>Você também pode entrar em contato conosco através do telefone +55 (81) 3202-2222 ou pelo email contato@informata.com.br</p>
             <br>
