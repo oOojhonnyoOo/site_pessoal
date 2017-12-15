@@ -30,7 +30,7 @@ if($_GET['sendMail'] == "SendMailCompleteForClient")
             <p>1. Produtividade: Aumento da produtividade entre 15 e 35% com mais produção por pessoa mapeadas em tempo real;</p>
             <p>2. Velocidade: O tempo de separar, preparar e embarcar os pedidos vai diminuir entre 20 e 30%;</p>
             <p>3. Segurança: Assertividade de 99,98%, ou seja, erros próximos de zero no estoque e baixo custo com devoluções;</p>
-            <p>4. Ambiente mais confortável e apresentável, retroalimento a produtividade em mais de 5%;</p>
+            <p>4. Ambiente mais confortável e apresentável, retroalimenta a produtividade em mais de 5%;</p>
             <p>5. O retorno do investimento acontece entre 90 e 180 dias.</p>
             <br>
             <p>Estamos no mercado desde 1986, com matriz em Recife/PE e unidade em São Paulo/SP e atendemos todo país, caso tenha interesse em conhecer melhor as nossas soluções, podemos marcar uma visita ou um call para mostrarmos como podemos ajudar a melhorar o seu negócio.</p>
