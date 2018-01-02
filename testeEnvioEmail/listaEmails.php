@@ -104,7 +104,7 @@ h4 {text-align: center; color: #0170af; margin-bottom: 20px;}
         		</thead>
         		<tbody>
         		<?php 
-        		$result = mysql_query("SELECT nome, email, condicao, data, telefone, segmento, tam_cd, itens_sku, qtd_postos_trabalho, notas_entrada_dia, n_pedidos_dia, qtd_caminhoes_dia, picking, notas_dia FROM aluno order by id desc");
+        		$result = mysql_query("SELECT nome, email, condicao, data, telefone, segmento, tam_cd, itens_sku, qtd_postos_trabalho, notas_entrada_dia, n_pedidos_dia, qtd_caminhoes_dia, picking, notas_dia FROM usuario order by id desc");
     				while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
     				    echo "<tr>
         				    		<td>".$row[0]."</td>
