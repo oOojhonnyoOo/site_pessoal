@@ -1,4 +1,4 @@
 <?php 
-    $connBD = mysql_connect('mysql762.umbler.com:41890', 'rootinfomail', '12345678abc');
-    $connBD = mysql_select_db('infomail', $connBD);
+    $connBD = mysql_connect('form_stockbox.mysql.dbaas.com.br', 'form_stockbox', 'StockInfo@2018');
+    $connBD = mysql_select_db('form_stockbox', $connBD);
 ?>

@@ -97,11 +97,11 @@ if($_GET['sendMail'] == "SendMailCompleteForClient")
     </html>
     ";
 
-//    $sql = "delete from aluno where email = '".$_POST['email']."' and validado <> 1 order by id desc limit 1 ";
+//    $sql = "delete from usuario where email = '".$_POST['email']."' and validado <> 1 order by id desc limit 1 ";
 //    $return->sqlDelete   = $sql;
 //    $return->queryDelete = mysql_query($sql);
 
-    $sql    = "INSERT INTO aluno(condicao, data, nome, email, telefone, segmento, tam_cd, itens_sku, qtd_postos_trabalho, notas_entrada_dia, n_pedidos_dia, qtd_caminhoes_dia, picking, notas_dia, validado) VALUES (
+    $sql    = "INSERT INTO usuario(condicao, data, nome, email, telefone, segmento, tam_cd, itens_sku, qtd_postos_trabalho, notas_entrada_dia, n_pedidos_dia, qtd_caminhoes_dia, picking, notas_dia, validado) VALUES (
                '".$return->condicao."' , 
                '".date('Y-m-d')."',
                '".$_POST['nome']."' , 
