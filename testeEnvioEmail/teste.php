@@ -10,11 +10,11 @@ $mail->Host = 'smtp.gmail.com';
 $mail->Port = 587;
 $mail->SMTPSecure = 'tls';
 $mail->SMTPAuth = true;
-$mail->Username = "joao.neto@informata.com.br";
+$mail->Username = "mundodosnerds.com.br@gmail.com";
 $mail->Password = "123asd123asd";
 
-$mail->setFrom('joao.neto@informata.com.br', 'Joao Neto');
-$mail->addReplyTo('joao.neto@informata.com.br', 'joao neto');
+$mail->setFrom('mundodosnerds.com.br@gmail.com', 'Joao Neto');
+$mail->addReplyTo('mundodosnerds.com.br@gmail.com', 'joao neto');
 $mail->addAddress($_GET['email'], 'teste 123');
 
 $mail->Subject = 'PHPMailer GMail SMTP test';
