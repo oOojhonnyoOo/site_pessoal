@@ -45,8 +45,7 @@ $redirectUri = (isset($_SERVER['HTTPS']) ? 'https://' : 'http://') . $_SERVER['H
 $params = [
     'clientId' => $clientId,
     'clientSecret' => $clientSecret,
-    'redirectUri' => $redirectUri,
-    'accessType' => 'offline'
+    'redirectUri' => $redirectUri
 ];
 
 $options = [];
